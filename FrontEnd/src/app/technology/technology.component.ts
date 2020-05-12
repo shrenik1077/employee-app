@@ -17,12 +17,14 @@ export class TechnologyComponent implements OnInit {
 
   ngOnInit() {
     this.listTechnologies();
+    console.log(this.technologies);
   }
 
   listTechnologies(){
     this._technologyService.getTechnology().subscribe(
       data => {
         console.log(data);
+        this.technologies = data;
       }
     );
   }
